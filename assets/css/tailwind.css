@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Sansation;
+    src: url("../fonts/Sansation.woff");
+  }
+
+  @font-face {
+    font-family: PortLligatSans;
+    src: url("../fonts/PortLligatSans.woff");
+  }
+
+  @font-face {
+    font-family: Andika;
+    src: url("../fonts/Andika.woff");
+  }
+
+  @font-face {
+    font-family: Saira;
+    src: url("../fonts/Saira.woff");
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .font-general-tracking-wide {
+      @apply font-general tracking-wide;
+    }
+  }
+}
