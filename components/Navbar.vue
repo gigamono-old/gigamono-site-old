@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Left Wrapper -->
       <div class="left-wrapper">
-        <img src="../assets/images/avatar-brand.png" alt="Sageflow logo" />
+        <img src="~/assets/images/avatar-brand.png" alt="Sageflow logo" />
         <div class="brand">Sageflow</div>
         <div class="v-divider" />
         <div class="tagline">Less work. More flow.</div>
@@ -11,10 +11,10 @@
 
       <!-- Mid Wrapper -->
       <div class="mid-wrapper">
-        <button>
-          <div href="">Explore</div>
+        <div class="explore">
+          <div>Explore</div>
           <span class="icon-dropdown"></span>
-        </button>
+        </div>
         <NuxtLink to="/" class="btn">Community</NuxtLink>
         <NuxtLink to="/" class="btn">Pricing</NuxtLink>
         <NuxtLink to="/" class="btn">Blog</NuxtLink>
@@ -35,43 +35,67 @@
 
 <style lang="scss" scoped>
   #navbar {
-    @apply bg-slate-gray-4 h-12 flex justify-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-nav-main);
+    min-height: 3.5rem;
 
     > .container {
-      @apply w-full md:w-300 flex;
+      display: flex;
+      min-width: 80rem;
 
       > .left-wrapper {
-        @apply flex items-center;
+        display: flex;
+        align-items: center;
 
         > img {
-          @apply w-7 h-7;
+          width: 2rem;
+          height: 2rem;
         }
 
         > .brand {
-          @apply text-white text-2xl font-brand font-medium text-green-50;
+          -webkit-font-smoothing: initial;
+          -moz-osx-font-smoothing: initial;
+          font-family: var(--font-brand);
+          font-size: 1.5em;
+          color: var(--color-text);
+          margin-left: 0.8rem;
         }
 
         > .v-divider {
-          @apply w-0.32 h-9 bg-slate-gray-2 hidden md:inline-flex;
+          height: 2.2rem;
+          width: 0.08rem;
+          background-color: var(--color-text);
+          margin-left: 0.8em;
         }
 
         > .tagline {
-          // Preventing fine-grained bold
-          -webkit-font-smoothing: initial;
-          -moz-osx-font-smoothing: initial;
-          font-family: Andika;
-          font-weight: normal;
-          letter-spacing: 0.01rem;
-          color: #76769a;
-          font-size: 1.1rem;
-          // @apply font-general text-lg tracking-wide hidden md:inline-flex text-slate-gray-1;
+          color: var(--color-text);
+          margin-left: 0.8rem;
         }
       }
 
       > .mid-wrapper {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: flex-end;
+
+        > .explore {
+          color: var(--color-text);
+        }
+
+        > a {
+          color: var(--color-text);
+        }
       }
 
       > .right-wrapper {
+        display: flex;
+        align-items: center;
+        color: var(--color-text);
+        margin-left: 2rem;
       }
     }
   }

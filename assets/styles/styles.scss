@@ -1,0 +1,49 @@
+// Reset styles
+@import "./reset.scss";
+
+/*** ICONS & AVATAR ***/
+// Importing icons from CSS to allow styling.
+:root {
+  --avatar-brand: url(~assets/images/avatar-brand.png);
+}
+
+$avatars: brand;
+
+@each $avatar in $avatars {
+  .avatar-#{$avatar} {
+    background-image: var(--avatar-#{$avatar});
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
+
+/*** FONTS ***/
+$fonts: general Andika, general-2 PortLligatSans, brand Sansation, profile Saira, link Ruda;
+
+// Cannot use variables to specify url in @font-face.
+// Cannot define @font-face in :root.
+// When @font-face is nested in a slector, cannot change font-family name.
+@each $ref, $font in $fonts {
+  @font-face {
+    font-family: $font;
+    src: url("~assets/fonts/#{$font}.woff");
+  }
+}
+
+:root {
+  @each $ref, $font in $fonts {
+    --font-#{$ref}: "#{$font}";
+  }
+}
+
+/*** COLORS ***/
+:root {
+  --color-nav-main: #2B2B48;
+
+  --color-primary: #83A1F3;
+  --color-primary-1: #94ABE9;
+  --color-primary-2: #4D71D3;
+
+  --color-text: #ffffff;
+  --color-text-min-focus: #f5f5f5;
+}
