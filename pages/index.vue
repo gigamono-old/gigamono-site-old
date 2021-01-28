@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HomeHeader />
-    <HomeContentArea />
+    <home-header />
+    <home-content-area />
   </div>
 </template>
 

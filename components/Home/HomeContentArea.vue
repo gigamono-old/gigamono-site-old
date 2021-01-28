@@ -1,10 +1,10 @@
 <template>
   <main>
-    <HomeExamplesSection />
-    <HomeIntegrationsSection />
-    <HomeTemplatesSection />
-    <HomeUseSection />
-    <HomeOpenessSection />
+    <home-use-case-section />
+    <home-integrations-section />
+    <home-templates-section />
+    <home-ease-section />
+    <home-openess-section />
   </main>
 </template>
 

@@ -2,12 +2,36 @@
 @import "./reset.scss";
 
 /*** ICONS & AVATAR ***/
-// Importing icons from CSS to allow styling.
 :root {
-  --avatar-brand: url(~assets/images/avatar-brand.png);
+  --icon-dropdown: url(~assets/icons/icon-dropdown.svg);
+  --icon-dropdown-2: url(~assets/icons/icon-dropdown-2.svg);
+  --icon-check: url(~assets/icons/icon-check.svg);
 }
 
-$avatars: brand;
+:root {
+  --avatar-brand: url(~assets/images/avatar-brand.png);
+  --avatar-google: url(~assets/icons/avatar-google.svg);
+  --avatar-ms: url(~assets/icons/avatar-ms.svg);
+  --avatar-fb: url(~assets/icons/avatar-fb.svg);
+}
+
+$icons: dropdown, dropdown-2, check;
+
+@each $icon in $icons {
+  .icon-#{$icon} {
+    -webkit-mask-image: var(--icon-#{$icon});
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: var(--icon-#{$icon});
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+  }
+}
+
+$avatars: brand, google, ms, fb;
 
 @each $avatar in $avatars {
   .avatar-#{$avatar} {
@@ -18,7 +42,8 @@ $avatars: brand;
 }
 
 /*** FONTS ***/
-$fonts: general Andika, general-2 PortLligatSans, brand Sansation, profile Saira, link Ruda;
+$fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-bold Raleway-Bold, brand Sansation, profile Saira,
+  link Ruda, message Ruluko;
 
 // Cannot use variables to specify url in @font-face.
 // Cannot define @font-face in :root.
@@ -38,12 +63,76 @@ $fonts: general Andika, general-2 PortLligatSans, brand Sansation, profile Saira
 
 /*** COLORS ***/
 :root {
-  --color-nav-main: #2B2B48;
+  --color-dark-primary: #2b2b48;
+  --color-dark-primary-1: #ccd0e9;
+  --color-dark-primary-2: #76769a;
+  --color-dark-primary-3: #454763;
+  --color-dark-primary-4: #434364;
+  --color-dark-primary-5: #3a3a56;
+  --color-dark-primary-6: #2b2b48;
+  --color-dark-primary-7: #22223d;
 
-  --color-primary: #83A1F3;
-  --color-primary-1: #94ABE9;
-  --color-primary-2: #4D71D3;
+  --color-primary: #83a1f3;
+  --color-primary-1: #83a1f3;
+  --color-primary-2: #94abe9;
+  --color-primary-3: #4d71d3;
+
+  --color-secondary: #32dc76;
+
+  --color-google: #4384f4;
+  --color-fb: #3b5999;
+  --color-ms: black;
+
+  --color-home-skyblue: #6abef2;
+  --color-home-orchid: #b848be;
+  --color-home-yellow-green: #a4d037;
+  --color-home-crimson: #e01e5a;
+  --color-home-golden-rod: #eeb436;
+
+  --color-gradient-primary: #eaa0fc;
+  --color-gradient-primary-second: #83a1f3;
 
   --color-text: #ffffff;
-  --color-text-min-focus: #f5f5f5;
+  --color-text-1: #ffffff;
+  --color-text-2: #f5f5f5;
+
+  --color-text-dark-1: #717171;
+
+  // Colors with Alphas
+  --color-dark-primary-alpha: rgba(0, 0, 0, 0.05);
+}
+
+/*** GRADIENTS ***/
+:root {
+  --gradient-primary: linear-gradient(
+    -90deg,
+    var(--color-gradient-primary) 0 20%,
+    var(--color-gradient-primary-second) 80%
+  );
+}
+
+/*** SHADOWS ***/
+:root {
+  --shadow-form: 0px 4px 8px 4px var(--color-dark-primary-alpha);
+}
+
+/*** SPACING ***/
+:root {
+  --home-narrow-width: 80rem;
+}
+
+/*** STATES ***/
+.disabled {
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+/*** STYLES ***/
+
+@mixin default-font-smoothing {
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
 }

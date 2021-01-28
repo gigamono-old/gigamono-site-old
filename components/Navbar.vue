@@ -1,31 +1,37 @@
 <template>
   <nav id="navbar">
-    <div class="container">
-      <!-- Left Wrapper -->
-      <div class="left-wrapper">
-        <img src="~/assets/images/avatar-brand.png" alt="Sageflow logo" />
-        <div class="brand">Sageflow</div>
-        <div class="v-divider" />
-        <div class="tagline">Less work. More flow.</div>
-      </div>
-
-      <!-- Mid Wrapper -->
-      <div class="mid-wrapper">
-        <div class="explore">
-          <div>Explore</div>
-          <span class="icon-dropdown"></span>
+    <!-- Main -->
+    <div class="main">
+      <div class="container">
+        <!-- Left Wrapper -->
+        <div class="left-wrapper">
+          <img src="~/assets/images/avatar-brand.png" alt="Sageflow logo" />
+          <div class="brand">Sageflow</div>
+          <div class="v-divider" />
+          <div class="tagline">Less work. More flow.</div>
         </div>
-        <NuxtLink to="/" class="btn">Community</NuxtLink>
-        <NuxtLink to="/" class="btn">Pricing</NuxtLink>
-        <NuxtLink to="/" class="btn">Blog</NuxtLink>
-      </div>
 
-      <!-- Right Wrapper -->
-      <div class="right-wrapper">
-        <div>Login</div>
-        <div>Sign Up</div>
+        <!-- Mid Wrapper -->
+        <div class="mid-wrapper">
+          <div class="explore">
+            <div class="text">Explore</div>
+            <span class="icon-dropdown-2"></span>
+          </div>
+          <NuxtLink to="/" class="btn">Community</NuxtLink>
+          <NuxtLink to="/" class="btn">Pricing</NuxtLink>
+          <NuxtLink to="/" class="btn">Blog</NuxtLink>
+        </div>
+
+        <!-- Right Wrapper -->
+        <div class="right-wrapper">
+          <div class="login">Login</div>
+          <div class="signup">Sign Up</div>
+        </div>
       </div>
     </div>
+
+    <!-- Squiggly Line -->
+    <div class="squiggly"></div>
   </nav>
 </template>
 
@@ -34,68 +40,172 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   #navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-nav-main);
+    background-color: var(--color-dark-primary);
     min-height: 3.5rem;
+    width: 100%;
+    flex-direction: column;
 
-    > .container {
+    > .main {
+      flex: 1;
       display: flex;
-      min-width: 80rem;
+      align-items: center;
+      justify-content: center;
 
-      > .left-wrapper {
+      > .container {
+        width: var(--home-narrow-width);
         display: flex;
-        align-items: center;
 
-        > img {
-          width: 2rem;
-          height: 2rem;
+        > .left-wrapper {
+          display: flex;
+          align-items: center;
+
+          > img {
+            width: 1.8rem;
+            height: 1.8rem;
+          }
+
+          > .brand {
+            @include default-font-smoothing;
+            font-family: var(--font-brand);
+            font-size: 1.4em;
+            color: var(--color-text);
+            margin-left: 0.8rem;
+          }
+
+          > .v-divider {
+            height: 2.2rem;
+            width: 0.09rem;
+            background-color: var(--color-dark-primary-3);
+            margin-left: 0.8rem;
+          }
+
+          > .tagline {
+            color: var(--color-dark-primary-2);
+            font-size: 1em;
+            margin-left: 0.8rem;
+            white-space: nowrap;
+          }
         }
 
-        > .brand {
-          -webkit-font-smoothing: initial;
-          -moz-osx-font-smoothing: initial;
-          font-family: var(--font-brand);
-          font-size: 1.5em;
+        > .mid-wrapper {
+          display: flex;
+          align-items: center;
+          flex: 2;
+          justify-content: center;
+          font-family: var(--font-link);
+          font-size: 1em;
+          padding-right: 2em;
+
+          > .explore {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: var(--color-dark-primary-1);
+
+            > .text {
+              height: 100%;
+              display: flex;
+              align-items: center;
+            }
+
+            > .icon-dropdown-2 {
+              height: 0.6rem;
+              width: 0.6rem;
+              margin-left: 0.5rem;
+              transform: rotate(-90deg);
+              background-color: var(--color-dark-primary-1);
+            }
+
+            &:hover {
+              color: var(--color-primary);
+              cursor: pointer;
+
+              > .icon-dropdown-2 {
+                background-color: var(--color-primary);
+              }
+            }
+          }
+
+          > a {
+            color: var(--color-dark-primary-1);
+            margin-left: 2.5rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              color: var(--color-primary);
+              cursor: pointer;
+            }
+          }
+        }
+
+        > .right-wrapper {
+          @include default-font-smoothing;
+          font-weight: 100;
+          display: flex;
+          align-items: center;
           color: var(--color-text);
-          margin-left: 0.8rem;
-        }
+          font-family: var(--font-link);
 
-        > .v-divider {
-          height: 2.2rem;
-          width: 0.08rem;
-          background-color: var(--color-text);
-          margin-left: 0.8em;
-        }
+          > .login {
+            height: 100%;
+            display: flex;
+            align-items: center;
 
-        > .tagline {
-          color: var(--color-text);
-          margin-left: 0.8rem;
+            &:hover {
+              color: var(--color-primary);
+              cursor: pointer;
+            }
+          }
+
+          > .signup {
+            margin-left: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            background-color: var(--color-primary-3);
+            white-space: nowrap;
+
+            &:hover {
+              background-color: var(--color-primary);
+              cursor: pointer;
+            }
+          }
         }
       }
+    }
 
-      > .mid-wrapper {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        justify-content: flex-end;
+    > .squiggly {
+      position: relative;
+      display: flex;
+      height: 10px;
+      width: 100%;
 
-        > .explore {
-          color: var(--color-text);
-        }
-
-        > a {
-          color: var(--color-text);
-        }
+      // The following creates the squiggly line under the Navbar.
+      // To understand this, change the gradient color of ::after.
+      &::after,
+      &::before {
+        height: inherit;
+        width: inherit;
+        background-size: 12px 100%; // Change this to adjust the size of the squiggly line.
+        content: "";
+        position: absolute;
       }
 
-      > .right-wrapper {
-        display: flex;
-        align-items: center;
-        color: var(--color-text);
-        margin-left: 2rem;
+      &::before {
+        top: -2px;
+        background-image: linear-gradient(45deg, var(--color-dark-primary-4) 35%, transparent 0),
+          linear-gradient(-45deg, var(--color-dark-primary-4) 35%, transparent 0);
+      }
+
+      &::after {
+        top: 0px;
+        background-image: linear-gradient(45deg, var(--color-dark-primary) 35%, transparent 0),
+          linear-gradient(-45deg, var(--color-dark-primary) 35%, transparent 0);
       }
     }
   }
