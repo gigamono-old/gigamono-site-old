@@ -6,6 +6,7 @@
   --icon-dropdown: url(~assets/icons/icon-dropdown.svg);
   --icon-dropdown-2: url(~assets/icons/icon-dropdown-2.svg);
   --icon-check: url(~assets/icons/icon-check.svg);
+  --icon-search: url(~assets/icons/icon-search.svg);
 }
 
 :root {
@@ -15,7 +16,7 @@
   --avatar-fb: url(~assets/icons/avatar-fb.svg);
 }
 
-$icons: dropdown, dropdown-2, check;
+$icons: dropdown, dropdown-2, check, search;
 
 @each $icon in $icons {
   .icon-#{$icon} {
@@ -42,8 +43,8 @@ $avatars: brand, google, ms, fb;
 }
 
 /*** FONTS ***/
-$fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-bold Raleway-Bold, brand Sansation, profile Saira,
-  link Ruda, message Ruluko;
+$fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-bold Raleway-Bold,
+  brand Sansation, profile Saira, link Ruda, message Ruluko;
 
 // Cannot use variables to specify url in @font-face.
 // Cannot define @font-face in :root.
@@ -73,33 +74,56 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   --color-dark-primary-7: #22223d;
 
   --color-primary: #83a1f3;
-  --color-primary-1: #83a1f3;
+  --color-primary-1: #eff3ff;
   --color-primary-2: #94abe9;
-  --color-primary-3: #4d71d3;
+  --color-primary-3: #83a1f3;
+  --color-primary-4: #4d71d3;
+  --color-primary-5: #305acc;
 
   --color-secondary: #32dc76;
 
   --color-google: #4384f4;
+  --color-google-2: #2c77f8;
   --color-fb: #3b5999;
-  --color-ms: black;
+  --color-fb-2: #284a92;
+  --color-ms: #070606;
+  --color-ms-2: black;
 
-  --color-home-skyblue: #6abef2;
+  --color-home-sky-blue: #6abef2;
+  --color-home-sky-blue-1: #a2ceec;
   --color-home-orchid: #b848be;
+  --color-home-orchid-1: #e9a8ec;
   --color-home-yellow-green: #a4d037;
   --color-home-crimson: #e01e5a;
+  --color-home-crimson-1: #e43b70;
   --color-home-golden-rod: #eeb436;
+  --color-home-golden-rod-1: #f0bd4e;
+  --color-home-bg: #f5f7ff;
 
   --color-gradient-primary: #eaa0fc;
+  --color-gradient-primary-2: #dc73f7;
   --color-gradient-primary-second: #83a1f3;
+  --color-gradient-primary-second-2: #5882f3;
 
   --color-text: #ffffff;
   --color-text-1: #ffffff;
   --color-text-2: #f5f5f5;
+  --color-text-3: #e5e5e5;
 
-  --color-text-dark-1: #717171;
+  --color-text-dark: #717171;
+  --color-text-dark-1: #c5c5c5;
+  --color-text-dark-2: #a5a5a5;
+  --color-text-dark-4: #333333;
+
+  --color-card-bg: #717171;
+  --color-card-bg-1: #c4c4c4;
 
   // Colors with Alphas
-  --color-dark-primary-alpha: rgba(0, 0, 0, 0.05);
+  --color-primary-alpha: rgba(131, 161, 243, 0.05);
+  --color-dark-primary-alpha: rgba(0, 0, 0, 0.1);
+  --color-dark-primary-alpha-1: rgba(0, 0, 0, 0.03);
+  --color-home-sky-blue-alpha: rgba(106, 190, 242, 0.1);
+  --color-home-dark-alpha: rgba(0, 0, 0, 0.25);
 }
 
 /*** GRADIENTS ***/
@@ -109,16 +133,27 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
     var(--color-gradient-primary) 0 20%,
     var(--color-gradient-primary-second) 80%
   );
+  --gradient-primary-2: linear-gradient(
+    -90deg,
+    var(--color-gradient-primary-2) 0 20%,
+    var(--color-gradient-primary-second-2) 80%
+  );
 }
 
 /*** SHADOWS ***/
 :root {
+  --shadow-primary: 0px 4px 4px var(--color-primary-alpha);
   --shadow-form: 0px 4px 8px 4px var(--color-dark-primary-alpha);
+  --shadow-home-sky-blue: 0px 2px 4px 4px var(--color-home-sky-blue-alpha);
+  --shadow-home-dark: 0px 4px 4px var(--color-home-dark-alpha);
+  --shadow-card: 0px 4px 8px 4px var(--color-dark-primary-alpha-1);
 }
 
 /*** SPACING ***/
 :root {
   --home-narrow-width: 80rem;
+  --home-section-head-width: 45rem;
+  --home-use-case-section-app-card-width: 5rem;
 }
 
 /*** STATES ***/
@@ -136,3 +171,30 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   -webkit-font-smoothing: initial;
   -moz-osx-font-smoothing: initial;
 }
+
+.home-section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.home-section-triangle-after {
+  &::after {
+    content: "";
+    --length: 5rem;
+    position: absolute;
+    border: calc(var(--length) * 0.5) solid transparent;
+    border-top-color: var(--color-text);
+    bottom: calc(var(--length) * -1);
+  }
+}
+
+.home-section-main {
+  width: var(--home-narrow-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

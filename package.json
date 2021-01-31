@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "start": "nuxt start",
+    "start": "nuxt start --port 8000",
     "build": "cross-env NODE_ENV=production nuxt build",
     "generate": "cross-env NODE_ENV=production nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",

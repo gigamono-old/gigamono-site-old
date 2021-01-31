@@ -57,8 +57,8 @@
     </div>
 
     <!-- Arc -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 50" preserveAspectRatio="none">
-      <path d="M0,50 L0,40  C300 -20, 700 -20, 1000 40 L1000,50 Z" />
+    <svg viewBox="0 0 1000 87" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M1000 74.6733 C700 -24, 300 -24, 0 74.6733 V87 H1000 V74.6733 Z" />
     </svg>
   </header>
 </template>
@@ -71,8 +71,9 @@
   @import "~/assets/styles/styles.scss";
 
   header {
+    --svg-height: 4rem;
     width: 100%;
-    height: 48em;
+    height: fit-content;
     display: flex;
     justify-content: center;
     background: radial-gradient(
@@ -82,13 +83,14 @@
     background-size: 38px 38px; // The box around a dot.
     color: var(--color-dark-primary-1);
     position: relative;
+    padding-bottom: var(--svg-height);
 
     > .main {
       width: var(--home-narrow-width);
-      margin-top: 4em;
+      margin-top: 5vh;
       display: grid;
-      grid-template-columns: 45rem 1fr max-content;
-      grid-template-rows: repeat(4, max-content);
+      grid-template-columns: 45rem 1fr auto;
+      grid-template-rows: repeat(4, auto);
       grid-template-areas:
         "bold-message  spacer     form"
         "small-message spacer     form"
@@ -178,14 +180,26 @@
 
           &.google-connect {
             background-color: var(--color-google);
+
+            &:hover {
+              background-color: var(--color-google-2);
+            }
           }
 
           &.fb-connect {
             background-color: var(--color-fb);
+
+            &:hover {
+              background-color: var(--color-fb-2);
+            }
           }
 
           &.ms-connect {
             background-color: var(--color-ms);
+
+            &:hover {
+              background-color: var(--color-ms-2);
+            }
           }
         }
 
@@ -242,6 +256,10 @@
           color: var(--color-text);
           font-size: 1.1em;
           background: var(--gradient-primary);
+
+          &:hover {
+            background: var(--gradient-primary-2);
+          }
         }
 
         > .notice {
@@ -264,7 +282,8 @@
         flex: 1;
         display: flex;
         justify-content: center;
-        margin-top: 5rem;
+        align-items: center;
+        height: 10rem;
 
         > ul {
           @include default-font-smoothing;
@@ -295,7 +314,7 @@
     }
 
     > svg {
-      height: 4rem;
+      height: var(--svg-height);
       width: 100%;
       position: absolute;
       bottom: 0;

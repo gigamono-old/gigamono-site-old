@@ -24,8 +24,8 @@
 
         <!-- Right Wrapper -->
         <div class="right-wrapper">
-          <div class="login">Login</div>
-          <div class="signup">Sign Up</div>
+          <a class="login">Login</a>
+          <button class="signup">Sign Up</button>
         </div>
       </div>
     </div>
@@ -149,13 +149,13 @@
           font-weight: 100;
           display: flex;
           align-items: center;
-          color: var(--color-text);
-          font-family: var(--font-link);
 
           > .login {
             height: 100%;
             display: flex;
             align-items: center;
+            color: var(--color-text);
+            font-family: var(--font-link);
 
             &:hover {
               color: var(--color-primary);
@@ -167,11 +167,13 @@
             margin-left: 1rem;
             padding: 0.5rem;
             border-radius: 0.2rem;
-            background-color: var(--color-primary-3);
+            background-color: var(--color-primary-4);
             white-space: nowrap;
+            color: var(--color-text);
+            font-family: var(--font-link);
 
             &:hover {
-              background-color: var(--color-primary);
+              background-color: var(--color-primary-5);
               cursor: pointer;
             }
           }

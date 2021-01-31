@@ -386,7 +386,8 @@ a:focus {
   -moz-appearance: none;
   text-decoration: none;
   outline: none;
-  color: initial;
+  color: inherit;
+  font-family: inherit;
 }
 
 button, input {
@@ -397,7 +398,8 @@ button, input {
   border: none;
   background: none;
   padding: 0;
-  color: initial;
+  color: inherit;
   text-align: left;
+  font-family: inherit;
 }
 
