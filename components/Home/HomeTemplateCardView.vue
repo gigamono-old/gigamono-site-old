@@ -1,14 +1,11 @@
-<template>
-  <ul class="template-card-view">
-    <li v-for="(item, index) in list" :key="index">
-      <div class="template-card">
-        <img :src="require(`~/assets/images/${item.image}`)" class="preview" alt="Template image" />
-        <div class="title">{{ item.title }}</div>
-        <div class="detail">{{ item.detail }}</div>
-        <button>{{ item.buttonText }}</button>
-      </div>
-    </li>
-  </ul>
+<template lang="pug">
+  ul.template-card-view
+    li(v-for='(item, index) in list' :key='index')
+      .template-card
+        img.preview(:src='require(`~/assets/images/${item.image}`)' alt='Template image')
+        .title {{ item.title }}
+        .detail {{ item.detail }}
+        button {{ item.buttonText }}
 </template>
 
 <script>

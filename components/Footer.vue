@@ -1,54 +1,40 @@
-<template>
-  <footer>
-    <div class="main home-section-main">
-      <!-- Footer Header -->
-      <div class="header">
-        <img src="~/assets/images/avatar-brand.png" alt="Sageflow logo" />
-        <div class="brand">Sageflow</div>
-        <div class="links">
-          <a href="">About</a>
-          <a href="">Blog</a>
-          <a href="">Pricing</a>
-        </div>
-        <button class="github">Github Stars</button>
-      </div>
+<template lang="pug">
+  footer
+    .main.home-section-main
+      //- Footer Header
+      .header
+        img(src='~/assets/images/avatar-brand.png' alt='Sageflow logo')
+        .brand Sageflow
+        .links
+          a(href='') About
+          a(href='') Blog
+          a(href='') Pricing
+        button.github Github Stars
 
-      <!-- Divider -->
-      <div class="divider"></div>
+      //- Divider
+      .divider
 
-      <!-- Sitelinks -->
-      <ul class="sitelinks">
-        <li v-for="(item, index) in sitelinks" :key="index">
-          <div class="title">{{ item.title }}</div>
-          <ul class="links">
-            <li v-for="(link, index2) in item.links" :key="index2">
-              <a href="#">{{ link }}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Bottom -->
-    <div class="bottom">
-      <div class="main">
-        <div class="copyright">© 2021 Sageflow, Ltd.</div>
-        <div class="links">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-          <a href="#">Contact</a>
-        </div>
-        <ul class="socials">
-          <li>
-            <img src="~/assets/images/placeholder.png" alt="Twitter Logo" />
-            <img src="~/assets/images/placeholder.png" alt="Facebook Logo" />
-            <img src="~/assets/images/placeholder.png" alt="Email Logo" />
-            <img src="~/assets/images/placeholder.png" alt="LinkedIn Logo" />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+      //- Sitelinks
+      ul.sitelinks
+        li(v-for='(item, index) in sitelinks' :key='index')
+          .title {{ item.title }}
+          ul.links
+            li(v-for='(link, index2) in item.links' :key='index2')
+              a(href='#') {{ link }}
+    //- Bottom
+    .bottom
+      .main
+        .copyright &copy; 2021 Sageflow, Ltd.
+        .links
+          a(href='#') Terms
+          a(href='#') Privacy
+          a(href='#') Contact
+        ul.socials
+          li
+            img(src='~/assets/images/placeholder.png' alt='Twitter Logo')
+            img(src='~/assets/images/placeholder.png' alt='Facebook Logo')
+            img(src='~/assets/images/placeholder.png' alt='Email Logo')
+            img(src='~/assets/images/placeholder.png' alt='LinkedIn Logo')
 </template>
 
 <script>
@@ -82,7 +68,7 @@
     > .main {
       > .header {
         width: var(--narrow-width);
-        padding: 2rem 0;
+        padding: 1rem 0;
         display: flex;
         align-items: center;
 
@@ -168,7 +154,7 @@
       width: 100%;
       background-color: var(--color-dark-primary-7);
       display: flex;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       justify-content: center;
 
       > .main {

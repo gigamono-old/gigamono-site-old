@@ -1,66 +1,59 @@
-<template>
-  <header>
-    <!-- Main -->
-    <div class="main">
-      <!-- Bold Message -->
-      <div class="bold-message">Connect your apps, automate workflows, save time</div>
+<template lang="pug">
+  header
+    //-  Main
+    .main
+      //-  Bold Message
+      .bold-message Connect your apps, automate workflows, save time
 
-      <!-- Small Message -->
-      <div class="small-message">
-        <span class="highlight">Sageflow</span> makes it easy to automate your manual repetitive
-        tasks by connecting different apps in useful ways.
-      </div>
+      //-  Small Message
+      .small-message
+        span.highlight Sageflow
+        | makes it easy to automate your manual repetitive
+        | tasks by connecting different apps in useful ways.
 
-      <!-- Visual Showcase -->
-      <div class="visual">Graphics showing app automation for visual clarity</div>
+      //-  Visual Showcase
+      .visual Graphics showing app automation for visual clarity
 
-      <!-- Form -->
-      <form action="submit">
-        <a href="/" class="google-connect">
-          <img src="~/assets/icons/avatar-google.svg" alt="Google Logo" />
-          <div class="text">Sign Up with Google</div>
-        </a>
-        <a href="/" class="fb-connect">
-          <img src="~/assets/icons/avatar-fb.svg" alt="Facebook Logo" />
-          <div class="text">Sign Up with Facebook</div>
-        </a>
-        <a href="/" class="ms-connect">
-          <img src="~/assets/icons/avatar-ms.svg" alt="Microsoft Logo" />
-          <div class="text">Sign Up with Microsoft</div>
-        </a>
-        <div class="divider"><span>OR</span></div>
-        <input type="email" placeholder="Email" />
-        <button>Get Started Free</button>
-        <div class="notice">
-          By signing up, you agree to our <a href="/" class="tos">Terms of Service</a> and
-          <a href="/" class="privacy-policy">Privacy Policy</a>.
-        </div>
-      </form>
+      //-  Form
+      form(action='submit')
+        a.google-connect(href='/')
+          img(src='~/assets/icons/avatar-google.svg' alt='Google Logo')
+          .text Sign Up with Google
+        a.fb-connect(href='/')
+          img(src='~/assets/icons/avatar-fb.svg' alt='Facebook Logo')
+          .text Sign Up with Facebook
+        a.ms-connect(href='/')
+          img(src='~/assets/icons/avatar-ms.svg' alt='Microsoft Logo')
+          .text Sign Up with Microsoft
+        .divider
+          span OR
+        input(type='email' placeholder='Email')
+        button Get Started Free
+        .notice
+          | By signing up, you agree to our
+          |
+          a.tos(href='/') Terms of Service
+          |  and
+          |
+          a.privacy-policy(href='/') Privacy Policy
+          | .
 
-      <!-- Highlights -->
-      <div class="highlights">
-        <ul>
-          <li>
-            <div class="icon-check"></div>
-            <div>Affordable</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Quick Start</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Open Source</div>
-          </li>
-        </ul>
-      </div>
-    </div>
+      //-  Highlights
+      .highlights
+        ul
+          li
+            .icon-check
+            div Affordable
+          li
+            .icon-check
+            div Quick Start
+          li
+            .icon-check
+            div Open Source
 
-    <!-- Arc -->
-    <svg viewBox="0 0 1000 87" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M1000 74.6733 C700 -24, 300 -24, 0 74.6733 V87 H1000 V74.6733 Z" />
-    </svg>
-  </header>
+    //-  Arc
+    svg(viewBox='0 0 1000 87' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none')
+      path(d='M1000 74.6733 C700 -24, 300 -24, 0 74.6733 V87 H1000 V74.6733 Z')
 </template>
 
 <script>

@@ -1,93 +1,57 @@
-<template>
-  <section class="home-section home-section-triangle-after">
-    <div class="main home-section-main">
-      <!-- Section Head -->
-      <home-section-head
-        section-name="USE CASES"
-        section-title="Easy to start, fast to grow"
-        color-var="--color-home-sky-blue"
-        section-detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      />
+<template lang="pug">
+  section.home-section.home-section-triangle-after
+    .main.home-section-main
+      //- Section Head
+      home-section-head(section-name='USE CASES', section-title='Easy to start, fast to grow', color-var='--color-home-sky-blue', section-detail='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ')
 
-      <!-- Section Body -->
-      <div class="section-body">
-        <!-- Workflow -->
-        <div class="flow">
-          <!-- Flow Animation Link -->
-          <div class="link">
-            <div v-for="i in 25" :key="i" class="circle"></div>
-          </div>
+      //- Section Body
+      .section-body
+          //- Workflow
+          .flow
+            //- Flow Animation Link
+            .link
+              .circle(v-for='i in 25', :key='i')
 
-          <!-- Completion Confetti -->
-          <home-confetti />
-          <div class="step">
-            <home-app-card
-              image="placeholder.png"
-              :name="options[index].steps[0].appName"
-              border-color-var="--color-home-sky-blue-1"
-              box-shadow-var="--shadow-home-sky-blue"
-            />
-            <div class="detail">{{ options[index].steps[0].detail }}</div>
-          </div>
+            //- Completion Confetti
+            home-confetti
+            
+            //- Steps
+            .step
+              home-app-card(image='placeholder.png', :name='options[index].steps[0].appName', border-color-var='--color-home-sky-blue-1', box-shadow-var='--shadow-home-sky-blue')
+              .detail {{ options[index].steps[0].detail }}
+            .step
+              home-app-card(image='placeholder.png', :name='options[index].steps[1].appName', border-color-var='--color-home-sky-blue-1', box-shadow-var='--shadow-home-sky-blue')
+              .detail {{ options[index].steps[1].detail }}
+            .step
+              home-app-card(image='placeholder.png', :name='options[index].steps[2].appName', border-color-var='--color-home-sky-blue-1', box-shadow-var='--shadow-home-sky-blue')
+              .detail {{ options[index].steps[2].detail }}
 
-          <!-- Steps -->
-          <div class="step">
-            <home-app-card
-              image="placeholder.png"
-              :name="options[index].steps[1].appName"
-              border-color-var="--color-home-sky-blue-1"
-              box-shadow-var="--shadow-home-sky-blue"
-            />
-            <div class="detail">{{ options[index].steps[1].detail }}</div>
-          </div>
-          <div class="step">
-            <home-app-card
-              image="placeholder.png"
-              :name="options[index].steps[2].appName"
-              border-color-var="--color-home-sky-blue-1"
-              box-shadow-var="--shadow-home-sky-blue"
-            />
-            <div class="detail">{{ options[index].steps[2].detail }}</div>
-          </div>
-        </div>
+          //- Visual Image
+          .visual Graphics giving visual clarity on each use case
 
-        <!-- Visual Image -->
-        <div class="visual">Graphics giving visual clarity on each use case</div>
+          //- Options
+          ul.options
+            li(key='1')
+              button.title Lorem ipsum dolor sit amet.
+              .detail.hidden
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                | incididunt ut labore et dolore magna aliqua.
+            li(key='2')
+              button.title Lorem ipsum dolor sit amet.
+              .detail.hidden
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                | incididunt ut labore et dolore magna aliqua.
+            li(key='3')
+              button.title Lorem ipsum dolor sit amet.
+              .detail.hidden
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                | incididunt ut labore et dolore magna aliqua.
+            li(key='4')
+              button.title Lorem ipsum dolor sit amet.
+              .detail
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                | incididunt ut labore et dolore magna aliqua.
 
-        <!-- Options -->
-        <ul class="options">
-          <li key="1">
-            <button class="title">Lorem ipsum dolor sit amet.</button>
-            <div class="detail hidden">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </div>
-          </li>
-          <li key="2">
-            <button class="title">Lorem ipsum dolor sit amet.</button>
-            <div class="detail hidden">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </div>
-          </li>
-          <li key="3">
-            <button class="title">Lorem ipsum dolor sit amet.</button>
-            <div class="detail hidden">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </div>
-          </li>
-          <li key="4">
-            <button class="title">Lorem ipsum dolor sit amet.</button>
-            <div class="detail">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
 </template>
 
 <script>

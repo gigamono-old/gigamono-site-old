@@ -1,24 +1,10 @@
-<template>
-  <div class="app-card-search-view">
-    <ul>
-      <li v-for="(item, index) in list" :key="index">
-        <div class="group">
-          <home-app-card
-            :name="item.card1.name"
-            :image="item.card2.image"
-            border-color-var="--color-text-3"
-            box-shadow-var="--shadow-primary"
-          ></home-app-card>
-          <home-app-card
-            :name="item.card2.name"
-            :image="item.card2.image"
-            border-color-var="--color-text-3"
-            box-shadow-var="--shadow-primary"
-          ></home-app-card>
-        </div>
-      </li>
-    </ul>
-  </div>
+<template lang="pug">
+  .app-card-search-view
+    ul
+      li(v-for='(item, index) in list', :key='index')
+        .group
+          home-app-card(:name='item.card1.name', :image='item.card2.image', border-color-var='--color-text-3', box-shadow-var='--shadow-primary')
+          home-app-card(:name='item.card2.name', :image='item.card2.image', border-color-var='--color-text-3', box-shadow-var='--shadow-primary')
 </template>
 
 <script>

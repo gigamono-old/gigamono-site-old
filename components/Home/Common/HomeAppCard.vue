@@ -1,8 +1,7 @@
-<template>
-  <div class="app-card" :style="styles">
-    <img :src="src" alt="App Image" />
-    <div class="name">{{ name }}</div>
-  </div>
+<template lang="pug">
+  .app-card(:style='styles')
+    img(:src='src', alt='App Image')
+    .name {{ name }}
 </template>
 
 <script>

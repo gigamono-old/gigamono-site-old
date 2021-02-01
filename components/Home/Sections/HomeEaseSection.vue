@@ -1,47 +1,34 @@
-<template>
-  <section class="home-section home-section-triangle-after">
-    <div class="main home-section-main">
-      <!-- Section Head -->
-      <home-section-head
-        section-name="EASY TO USE"
-        section-title="Lorem ipsum dolor, sit amet"
-        color-var="--color-home-crimson"
-        section-detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
+<template lang="pug">
+  section.home-section.home-section-triangle-after
+    .main.home-section-main
+      //- Section Head
+      home-section-head(section-name='EASY TO USE', section-title='Lorem ipsum dolor, sit amet', color-var='--color-home-crimson', section-detail='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 
-      <!-- Content -->
-      <div class="content">
-        <!-- Check List -->
-        <ul>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-        </ul>
+      //- Content
+      .content
+        //- Check List
+        ul
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
 
-        <!-- Demo Button -->
-        <button>SEE DEMO</button>
+        //- Demo Button
+        button SEE DEMO
 
-        <!-- Visual Image -->
-        <div class="visual">Gif showing a simplified demo</div>
-      </div>
+        //- Visual Image
+        .visual Gif showing a simplified demo
 
-      <!-- Sign Up Button -->
-      <button>SIGN UP FOR FREE</button>
-    </div>
-  </section>
+      //- Sign Up Button
+      button SIGN UP FOR FREE
 </template>
 
 <script>

@@ -1,66 +1,47 @@
-<template>
-  <section class="home-section">
-    <div class="main home-section-main">
-      <!-- Section Head -->
-      <home-section-head
-        section-name="OPEN SOURCE"
-        section-title="Lorem ipsum dolor, sit amet"
-        color-var="--color-home-golden-rod"
-        section-detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
+<template lang="pug">
+  section.home-section
+    .main.home-section-main
+      //- Section Head
+      home-section-head(section-name='OPEN SOURCE', section-title='Lorem ipsum dolor, sit amet', color-var='--color-home-golden-rod', section-detail='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 
-      <!-- Content -->
-      <div class="content">
-        <!-- Visual Image -->
-        <div class="visual">Commandline screenshot of installing Sageflow</div>
+      //- Content
+      .content
+        //- Visual Image
+        .visual Commandline screenshot of installing Sageflow
 
-        <!-- Check List -->
-        <ul class="checklist">
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-          <li>
-            <div class="icon-check"></div>
-            <div>Lorem ipsum dolor sit amet, consectetur</div>
-          </li>
-        </ul>
+        //- Check List
+        ul.checklist
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            div Lorem ipsum dolor sit amet, consectetur
 
-        <!-- Technologies Used List -->
-        <ul class="techstack">
-          <li>
-            <img src="~/assets/images/placeholder.png" alt=" Techmology used image" />
-          </li>
-          <li>
-            <img src="~/assets/images/placeholder.png" alt=" Techmology used image" />
-          </li>
-          <li>
-            <img src="~/assets/images/placeholder.png" alt=" Techmology used image" />
-          </li>
-          <li>
-            <img src="~/assets/images/placeholder.png" alt=" Techmology used image" />
-          </li>
-          <li>
-            <img src="~/assets/images/placeholder.png" alt=" Techmology used image" />
-          </li>
-        </ul>
+        //- Technologies Used List
+        ul.techstack
+          li
+            img(src='~/assets/images/placeholder.png', alt=' Techmology used image')
+          li
+            img(src='~/assets/images/placeholder.png', alt=' Techmology used image')
+          li
+            img(src='~/assets/images/placeholder.png', alt=' Techmology used image')
+          li
+            img(src='~/assets/images/placeholder.png', alt=' Techmology used image')
+          li
+            img(src='~/assets/images/placeholder.png', alt=' Techmology used image')
 
-        <!-- Learn More Button -->
-        <button>LEARN MORE</button>
-      </div>
+        //- Learn More Button
+        button LEARN MORE
 
-      <!-- Get Started Button -->
-      <button>GET STARTED FREE</button>
-    </div>
-  </section>
+      //- Get Started Button
+      button GET STARTED FREE
 </template>
 
 <script>

@@ -1,12 +1,10 @@
-<template>
-  <div class="section-head">
-    <div class="section-name" :style="colorStyle">{{ sectionName }}</div>
-    <div class="section-title">{{ sectionTitle }}</div>
-    <div class="section-detail">
-      <span class="highlight" :style="colorStyle">{{ sectionDetailHead }}</span>
-      {{ sectionDetailTail }}
-    </div>
-  </div>
+<template lang="pug">
+  .section-head
+    .section-name(:style='colorStyle') {{ sectionName }}
+    .section-title {{ sectionTitle }}
+    .section-detail
+      span.highlight(:style='colorStyle') {{ sectionDetailHead }}
+      | {{ sectionDetailTail }}
 </template>
 
 <script>

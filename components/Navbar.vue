@@ -1,42 +1,48 @@
-<template>
-  <nav id="navbar">
-    <!-- Main -->
-    <div class="main">
-      <div class="container">
-        <!-- Left Wrapper -->
-        <div class="left-wrapper">
-          <img src="~/assets/images/avatar-brand.png" alt="Sageflow logo" />
-          <div class="brand">Sageflow</div>
-          <div class="v-divider" />
-          <div class="tagline">Less work. More flow.</div>
-        </div>
+<template lang="pug">
+  nav#navbar
+    //- Main
+    .main
+      .container
+        //- Mobile Menu
+        svg.icon-menu(viewBox="0 0 33 22" xmlns="http://www.w3.org/2000/svg" @click="showMobileMenu")
+          rect(x="0.383057" y="18.8734" width="31.9204" height="2.79999")
+          rect(x="0.303467" y="9.80371" width="31.9996" height="2.73912")
+          rect(x="0.383057" y="0.67334" width="31.9204" height="2.79999")
 
-        <!-- Mid Wrapper -->
-        <div class="mid-wrapper">
-          <div class="explore">
-            <div class="text">Explore</div>
-            <span class="icon-dropdown-2"></span>
-          </div>
-          <NuxtLink to="/" class="btn">Community</NuxtLink>
-          <NuxtLink to="/" class="btn">Pricing</NuxtLink>
-          <NuxtLink to="/" class="btn">Blog</NuxtLink>
-        </div>
+        //- Left Wrapper
+        .left-wrapper
+          img(src='~/assets/images/avatar-brand.png', alt='Sageflow logo')
+          .brand Sageflow
+          .v-divider
+          .tagline Less work. More flow.
 
-        <!-- Right Wrapper -->
-        <div class="right-wrapper">
-          <a class="login">Login</a>
-          <button class="signup">Sign Up</button>
-        </div>
-      </div>
-    </div>
+        //- Mid Wrapper
+        .mid-wrapper
+          .explore
+            .text Explore
+            span.icon-dropdown-2
+          nuxt-link.btn(to='/') Community
+          nuxt-link.btn(to='/') Pricing
+          nuxt-link.btn(to='/') Blog
 
-    <!-- Squiggly Line -->
-    <div class="squiggly"></div>
+        //- Right Wrapper
+        .right-wrapper
+          a.login Log In
+          button.signup Sign Up
+
+    //- Squiggly Line
+    .squiggly
   </nav>
 </template>
 
 <script>
-  export default {}
+  export default {
+    methods: {
+      showMobileMenu() {
+        this.$root.$emit("showMobileMenu")
+      },
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -54,10 +60,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include lt-narrow {
+        margin: 0 1rem;
+      }
 
       > .container {
         width: var(--home-narrow-width);
         display: flex;
+        align-items: center;
+        @include bg-phone {
+          height: var(--navbar-mobile-height);
+          justify-content: space-between;
+        }
+
+        > svg.icon-menu {
+          display: none;
+          @include bg-phone {
+            height: 1.3rem;
+            fill: var(--color-text);
+            display: flex;
+          }
+        }
 
         > .left-wrapper {
           display: flex;
@@ -66,6 +89,10 @@
           > img {
             width: 1.8rem;
             height: 1.8rem;
+            @include bg-phone {
+              width: 1.6rem;
+              height: 1.6rem;
+            }
           }
 
           > .brand {
@@ -74,6 +101,10 @@
             font-size: 1.4em;
             color: var(--color-text);
             margin-left: 0.8rem;
+            @include bg-phone {
+              margin-left: 0.4rem;
+              font-size: 1.2em;
+            }
           }
 
           > .v-divider {
@@ -81,6 +112,9 @@
             width: 0.09rem;
             background-color: var(--color-dark-primary-3);
             margin-left: 0.8rem;
+            @include bg-phone {
+              display: none;
+            }
           }
 
           > .tagline {
@@ -88,6 +122,9 @@
             font-size: 1em;
             margin-left: 0.8rem;
             white-space: nowrap;
+            @include tablet {
+              display: none;
+            }
           }
         }
 
@@ -99,6 +136,9 @@
           font-family: var(--font-link);
           font-size: 1em;
           padding-right: 2em;
+          @include bg-phone {
+            display: none;
+          }
 
           > .explore {
             display: flex;
@@ -156,6 +196,9 @@
             align-items: center;
             color: var(--color-text);
             font-family: var(--font-link);
+            @include bg-phone {
+              display: none;
+            }
 
             &:hover {
               color: var(--color-primary);
@@ -211,4 +254,11 @@
       }
     }
   }
+
+  // @media screen and (max-width: 1304px) {
+  //   #navbar > .main {
+  //     width: 100%;
+  //     background-color: red;
+  //   }
+  // }
 </style>

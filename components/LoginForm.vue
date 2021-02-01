@@ -1,5 +1,5 @@
-<template>
-  <form>LOGIN FORM</form>
+<template lang="pug">
+  form LOGIN FORM
 </template>
 
 <script>

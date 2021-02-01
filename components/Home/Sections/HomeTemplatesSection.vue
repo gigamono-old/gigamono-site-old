@@ -1,23 +1,15 @@
-<template>
-  <section class="home-section home-section-triangle-after">
-    <div class="main home-section-main">
-      <!-- Section Head -->
-      <home-section-head
-        section-name="TEMPLATES"
-        section-title="Lorem ipsum dolor, sit amet"
-        color-var="--color-home-yellow-green"
-        section-detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-      />
+<template lang="pug">
+  section.home-section.home-section-triangle-after
+    .main.home-section-main
+      //- Section Head
+      home-section-head(section-name='TEMPLATES', section-title='Lorem ipsum dolor, sit amet', color-var='--color-home-yellow-green', section-detail='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ')
 
-      <!-- Template Card View -->
-      <div class="template-card-view-wrapper">
-        <home-template-card-view />
-      </div>
+      //- Template Card View
+      .template-card-view-wrapper
+        home-template-card-view
 
-      <!-- Discover Button -->
-      <button>DISCOVER MORE</button>
-    </div>
-  </section>
+      //- Discover Button
+      button DISCOVER MORE
 </template>
 
 <script>

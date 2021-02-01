@@ -154,6 +154,29 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   --home-narrow-width: 80rem;
   --home-section-head-width: 45rem;
   --home-use-case-section-app-card-width: 5rem;
+  --navbar-mobile-height: 4.1rem;
+}
+
+/*** SCREENS ***/
+@mixin lt-narrow {
+  // When screen is almost less than home-narrow-width
+  @media screen and (max-width: 1304px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  // Tablets and below
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin bg-phone {
+  // Big phones and below
+  @media screen and (max-width: 767px) {
+    @content;
+  }
 }
 
 /*** STATES ***/
@@ -197,4 +220,3 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   flex-direction: column;
   align-items: center;
 }
-

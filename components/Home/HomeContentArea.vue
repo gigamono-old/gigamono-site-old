@@ -1,11 +1,10 @@
-<template>
-  <main>
-    <home-use-case-section class="use-case-section" />
-    <home-integrations-section class="integrations-section" />
-    <home-templates-section class="templates-section" />
-    <home-ease-section class="ease-section" />
-    <home-openess-section class="openess-section" />
-  </main>
+<template lang="pug">
+  main
+    home-use-case-section.use-case-section
+    home-integrations-section.integrations-section
+    home-templates-section.templates-section
+    home-ease-section.ease-section
+    home-openess-section.openess-section
 </template>
 
 <script>

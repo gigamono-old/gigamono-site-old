@@ -1,26 +1,18 @@
-<template>
-  <section class="home-section">
-    <div class="main home-section-main">
-      <!-- Section Head -->
-      <home-section-head
-        section-name="INTEGRATIONS"
-        section-title="Lorem ipsum dolor, sit amet"
-        color-var="--color-home-orchid"
-        section-detail="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
+<template lang="pug">
+  section.home-section
+    .main.home-section-main
+      //- Section Head
+      home-section-head(section-name='INTEGRATIONS', section-title='Lorem ipsum dolor, sit amet', color-var='--color-home-orchid', section-detail='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 
-      <!-- Search Bar -->
-      <div class="search-bar">
-        <div class="icon-search-wrapper"><div class="icon-search"></div></div>
-        <input placeholder="Search for apps you use" type="search" />
-      </div>
+      //- Search Bar
+      .search-bar
+        .icon-search-wrapper
+          .icon-search
+        input(placeholder='Search for apps you use', type='search')
 
-      <!-- App Card Search View -->
-      <div class="app-card-search-view-wrapper">
-        <home-app-card-search-view />
-      </div>
-    </div>
-  </section>
+      //- App Card Search View
+      .app-card-search-view-wrapper
+        home-app-card-search-view
 </template>
 
 <script>
