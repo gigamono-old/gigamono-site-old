@@ -27,8 +27,8 @@
 
         //- Right Wrapper
         .right-wrapper
-          a.login Log In
-          button.signup Sign Up
+          a.login Log in
+          button.signup Sign up
 
     //- Squiggly Line
     .squiggly
@@ -61,7 +61,8 @@
       align-items: center;
       justify-content: center;
       @include lt-narrow {
-        margin: 0 1rem;
+        margin-left: var(--home-margin-lt-narrow);
+        margin-right: var(--home-margin-lt-narrow);
       }
 
       > .container {
@@ -69,14 +70,14 @@
         display: flex;
         align-items: center;
         @include bg-phone {
-          height: var(--navbar-mobile-height);
+          height: var(--navbar-height-bg-phone);
           justify-content: space-between;
         }
 
         > svg.icon-menu {
           display: none;
           @include bg-phone {
-            height: 1.3rem;
+            height: 1rem;
             fill: var(--color-text);
             display: flex;
           }

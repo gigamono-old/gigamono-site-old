@@ -29,7 +29,7 @@
       },
       height: {
         type: String,
-        default: "5.4rem",
+        default: "var(--home-use-case-section-app-card-height)",
       },
     },
     data() {

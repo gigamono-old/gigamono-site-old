@@ -1,8 +1,7 @@
-<template>
-  <div>
-    <home-header />
-    <home-content-area />
-  </div>
+<template lang="pug">
+  div
+    home-header
+    home-content-area
 </template>
 
 <script>

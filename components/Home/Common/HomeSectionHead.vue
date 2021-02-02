@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: var(--home-section-head-width);
+    width: 100%;
 
     > .section-name {
       @include default-font-smoothing;
@@ -70,6 +70,12 @@
       letter-spacing: -1.5px; // rem unit does not work for this font on safari and firefox
       margin-top: 2rem;
       text-align: center;
+      @include bg-phone {
+        font-size: 1.6em;
+      }
+      @include md-phone {
+        font-size: 1.4em;
+      }
     }
 
     > .section-detail {
@@ -78,6 +84,10 @@
       margin-top: 1rem;
       text-align: center;
       line-height: 1.5em;
+      max-width: 30rem;
+      @include bg-phone-2 {
+        font-size: 0.9em;
+      }
     }
   }
 </style>

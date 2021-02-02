@@ -13,16 +13,16 @@
         ul.checklist
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
 
         //- Technologies Used List
         ul.techstack
@@ -49,6 +49,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   section {
     padding-top: 5em;
     padding-bottom: 2em;
@@ -61,14 +63,27 @@
         display: grid;
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto 1fr;
+        grid-column-gap: 1rem;
         grid-template-areas:
           "visual checklist"
           "visual techstack"
           "visual button";
+        @include tablet {
+          width: 100%;
+        }
+        @include bg-phone {
+          grid-template-columns: auto;
+          grid-template-rows: repeat(3, auto);
+          grid-row-gap: 2rem;
+          grid-template-areas:
+            "visual"
+            "techstack"
+            "checklist"
+            "button";
+        }
 
         > .visual {
           grid-area: visual;
-          margin-right: 2rem;
           width: 32rem;
           height: 20rem;
           background-color: var(--color-text-2);
@@ -80,6 +95,10 @@
           color: var(--color-text-dark);
           padding: 0 6rem;
           text-align: center;
+          @include tablet {
+            padding: 0 2rem;
+            width: 100%;
+          }
         }
 
         > .checklist {
@@ -88,18 +107,43 @@
           flex-direction: column;
           height: 10rem;
           justify-content: space-between;
+          @include bg-phone {
+            width: fit-content;
+            justify-self: center;
+          }
 
           > li {
             display: flex;
             width: var(--li-width);
             font-size: 1em;
             color: var(--color-text-dark);
+            @include tablet {
+              font-size: 0.9em;
+            }
+            @include bg-phone {
+              font-size: 1em;
+            }
+            @include md-phone {
+              font-size: 0.9em;
+            }
 
             > .icon-check {
               width: 1.35rem;
               height: 1.35rem;
               background-color: var(--color-home-golden-rod);
               margin-right: 0.4rem;
+              @include bg-phone {
+                width: 1.1rem;
+                height: 1.1rem;
+              }
+              @include md-phone {
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+
+            > .text {
+              width: max-content;
             }
           }
         }
@@ -109,6 +153,14 @@
           margin-top: 1.5rem;
           display: flex;
           justify-content: space-between;
+          @include bg-phone {
+            justify-self: center;
+            width: 19rem;
+          }
+          @include sm-phone {
+            width: 100%;
+            justify-content: space-between;
+          }
 
           > li {
             display: flex;
@@ -134,6 +186,16 @@
           font-size: 0.8rem;
           border: 1px solid var(--color-card-bg-1);
           font-weight: bold;
+          @include tablet {
+            width: 19rem;
+          }
+          @include bg-phone {
+            justify-self: center;
+            margin-top: 0;
+          }
+          @include md-phone {
+            width: 100%;
+          }
 
           &:hover {
             color: var(--color-home-golden-rod);
@@ -151,6 +213,12 @@
         font-size: 0.8rem;
         color: var(--color-text);
         font-weight: bold;
+        @include bg-phone {
+          width: 19rem;
+        }
+        @include md-phone {
+          width: 100%;
+        }
 
         &:hover {
           background-color: var(--color-home-golden-rod);

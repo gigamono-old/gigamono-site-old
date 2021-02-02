@@ -82,6 +82,18 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
 
   --color-secondary: #32dc76;
 
+  --color-text: #ffffff;
+  --color-text-1: #ffffff;
+  --color-text-2: #f5f5f5;
+  --color-text-3: #e5e5e5;
+
+  --color-text-dark: #717171;
+  --color-text-dark-1: #c5c5c5;
+  --color-text-dark-2: #a5a5a5;
+  --color-text-dark-4: #333333;
+  --color-text-dark-5: #222222;
+  --color-text-dark-6: #000000;
+
   --color-google: #4384f4;
   --color-google-2: #2c77f8;
   --color-fb: #3b5999;
@@ -104,16 +116,6 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   --color-gradient-primary-2: #dc73f7;
   --color-gradient-primary-second: #83a1f3;
   --color-gradient-primary-second-2: #5882f3;
-
-  --color-text: #ffffff;
-  --color-text-1: #ffffff;
-  --color-text-2: #f5f5f5;
-  --color-text-3: #e5e5e5;
-
-  --color-text-dark: #717171;
-  --color-text-dark-1: #c5c5c5;
-  --color-text-dark-2: #a5a5a5;
-  --color-text-dark-4: #333333;
 
   --color-card-bg: #717171;
   --color-card-bg-1: #c4c4c4;
@@ -152,15 +154,29 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
 /*** SPACING ***/
 :root {
   --home-narrow-width: 80rem;
+  --home-narrow-width-bg-phone: 80%;
+
+  --home-margin-lt-narrow: 1rem;
+
   --home-section-head-width: 45rem;
+
   --home-use-case-section-app-card-width: 5rem;
-  --navbar-mobile-height: 4.1rem;
+  --home-use-case-section-app-card-height: 5.4rem;
+
+  --navbar-height-bg-phone: 4.1rem;
 }
 
 /*** SCREENS ***/
 @mixin lt-narrow {
   // When screen is almost less than home-narrow-width
   @media screen and (max-width: 1304px) {
+    @content;
+  }
+}
+
+@mixin lt-header {
+  // When screen is almost less than header desktop content
+  @media screen and (max-width: 1146px) {
     @content;
   }
 }
@@ -175,6 +191,26 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
 @mixin bg-phone {
   // Big phones and below
   @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin bg-phone-2 {
+  // Big phones and below. Screen is smaller than bg-phone.
+  @media screen and (max-width: 580px) {
+    @content;
+  }
+}
+
+@mixin md-phone {
+  // Meddium phones and below
+  @media screen and (max-width: 424px) {
+    @content;
+  }
+}
+@mixin sm-phone {
+  // Small phones and below
+  @media screen and (max-width: 374px) {
     @content;
   }
 }
@@ -219,4 +255,11 @@ $fonts: general Andika, general-2 PortLligatSans, general-3 Raleway, general-3-b
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include lt-narrow {
+    width: var(--home-narrow-width-bg-phone);
+  }
+  align-items: center;
+  @include bg-phone {
+    width: var(--home-narrow-width-bg-phone);
+  }
 }

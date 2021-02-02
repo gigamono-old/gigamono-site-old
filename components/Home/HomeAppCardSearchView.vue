@@ -31,6 +31,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   .app-card-search-view {
     > ul {
       display: flex;
@@ -45,16 +47,25 @@
 
             &:first-child {
               margin-bottom: 3rem;
+              @include bg-phone-2 {
+                margin-bottom: 2rem;
+              }
             }
           }
         }
 
         &:not(:last-child) {
           margin-right: 3rem;
+          @include bg-phone-2 {
+            margin-right: 2rem;
+          }
         }
 
         &:nth-child(odd) {
           margin-top: 4rem;
+          @include bg-phone-2 {
+            margin-top: 2rem;
+          }
         }
       }
     }

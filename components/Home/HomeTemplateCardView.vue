@@ -33,10 +33,18 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   .template-card-view {
     display: flex;
+    @include bg-phone {
+      flex-direction: column;
+    }
 
     > li {
+      display: flex;
+      justify-content: center;
+      width: 100%;
       > .template-card {
         height: 27rem;
         width: 19rem;
@@ -45,7 +53,7 @@
         box-sizing: border-box;
         padding-bottom: 1.5rem;
         display: grid;
-        grid-template-rows: repeat(2, max-content) 1fr;
+        grid-template-rows: repeat(2, auto) 1fr;
         grid-template-areas:
           "image"
           "title"
@@ -55,6 +63,13 @@
         box-shadow: var(--shadow-card);
         border: 1px solid var(--color-text-3);
         border-top: 5px solid var(--color-home-yellow-green);
+        @include bg-phone {
+          width: 21rem;
+          height: auto;
+        }
+        @include md-phone {
+          width: 100%;
+        }
 
         > img {
           grid-area: image;
@@ -69,7 +84,13 @@
           text-align: center;
           padding: 1.5rem 0;
           color: var(--color-home-yellow-green);
-          font-size: 1.1rem;
+          font-size: 1.1em;
+          @include bg-phone {
+            padding: 0.8rem 0;
+            width: 90%;
+            text-align: left;
+            font-size: 0.9em;
+          }
         }
 
         > .detail {
@@ -79,6 +100,12 @@
           font-size: 0.8rem;
           line-height: 1.2rem;
           color: var(--color-text-dark);
+          @include bg-phone {
+            line-height: 1.6em;
+            font-size: 0.9em;
+            width: 90%;
+            text-align: left;
+          }
         }
 
         > button {
@@ -91,6 +118,9 @@
           color: var(--color-text);
           background-color: var(--color-card-bg);
           font-size: 0.9rem;
+          @include bg-phone {
+            margin-top: 1.2rem;
+          }
 
           &:hover {
             background-color: var(--color-home-yellow-green);
@@ -100,10 +130,22 @@
 
       &:not(:last-child) {
         margin-right: 3rem;
+        @include bg-phone {
+          margin: 0;
+        }
       }
 
       &:nth-child(even) {
         margin-top: 4rem;
+        @include bg-phone {
+          margin-top: 2rem;
+        }
+      }
+
+      &:not(:first-child):not(:nth-child(2)) {
+        @include bg-phone {
+          display: none;
+        }
       }
     }
   }

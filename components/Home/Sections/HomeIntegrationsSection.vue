@@ -20,6 +20,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   section {
     padding-top: 5em;
     padding-bottom: 2em;
@@ -29,6 +31,15 @@
       width: 100%;
       position: relative;
       padding-bottom: 17rem;
+      @include bg-phone-2 {
+        padding-bottom: 13rem;
+      }
+
+      > .section-head {
+        @include tablet {
+          width: var(--home-narrow-width-bg-phone);
+        }
+      }
 
       > .search-bar {
         margin-top: 2rem;
@@ -39,6 +50,9 @@
         align-items: center;
         border-radius: 20rem;
         background-color: var(--color-text);
+        @include bg-phone-2 {
+          width: var(--home-narrow-width-bg-phone);
+        }
 
         > .icon-search-wrapper {
           margin-left: 0.3rem;
@@ -76,6 +90,8 @@
         bottom: -5rem;
         overflow-x: hidden;
         padding: 1rem 0;
+        display: flex;
+        justify-content: center;
       }
     }
   }

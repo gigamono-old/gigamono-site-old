@@ -10,16 +10,16 @@
         ul
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
+          li
+            .icon-check
+            .text Lorem ipsum dolor sit amet, consectetur
           li
             .icon-check
             div Lorem ipsum dolor sit amet, consectetur
           li
             .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
-          li
-            .icon-check
-            div Lorem ipsum dolor sit amet, consectetur
+            .text Lorem ipsum dolor sit amet, consectetur
 
         //- Demo Button
         button SEE DEMO
@@ -36,6 +36,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   section {
     padding-top: 5em;
     padding-bottom: 2em;
@@ -49,9 +51,21 @@
         display: grid;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto 1fr;
+        grid-column-gap: 1rem;
         grid-template-areas:
           "checklist visual"
           "button    visual";
+        @include tablet {
+          width: 100%;
+        }
+        @include bg-phone {
+          grid-template-columns: auto;
+          grid-template-rows: repeat(2, auto);
+          grid-row-gap: 2rem;
+          grid-template-areas:
+            "visual"
+            "checklist";
+        }
 
         > ul {
           grid-area: checklist;
@@ -59,18 +73,43 @@
           flex-direction: column;
           height: 10rem;
           justify-content: space-between;
+          @include bg-phone {
+            width: fit-content;
+            justify-self: center;
+          }
 
           > li {
             display: flex;
             width: var(--li-width);
             font-size: 1em;
             color: var(--color-text-dark);
+            @include tablet {
+              font-size: 0.9em;
+            }
+            @include bg-phone {
+              font-size: 1em;
+            }
+            @include md-phone {
+              font-size: 0.8em;
+            }
 
             > .icon-check {
               width: 1.35rem;
               height: 1.35rem;
               background-color: var(--color-home-crimson);
               margin-right: 0.4rem;
+              @include md-phone {
+                width: 1.1rem;
+                height: 1.1rem;
+              }
+              @include md-phone {
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+
+            > .text {
+              width: max-content;
             }
           }
         }
@@ -85,6 +124,12 @@
           font-size: 0.8rem;
           border: 1px solid var(--color-card-bg-1);
           font-weight: bold;
+          @include tablet {
+            width: 19rem;
+          }
+          @include bg-phone {
+            display: none;
+          }
 
           &:hover {
             color: var(--color-home-crimson);
@@ -92,9 +137,9 @@
         }
 
         > .visual {
-          margin-left: 2rem;
+          --initial-width: 32rem;
           grid-area: visual;
-          width: 32rem;
+          width: var(--initial-width);
           height: 20rem;
           background-color: var(--color-text);
           box-sizing: border-box;
@@ -104,6 +149,10 @@
           border-radius: 5px;
           color: var(--color-text-dark);
           padding: 0 2rem;
+          text-align: center;
+          @include tablet {
+            width: 100%;
+          }
         }
       }
 

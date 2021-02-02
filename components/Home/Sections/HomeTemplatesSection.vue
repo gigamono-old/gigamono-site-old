@@ -17,16 +17,33 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   section {
     padding-top: 6em;
     padding-bottom: 2em;
 
     > .main {
       width: 100%;
+      @include bg-phone {
+        width: var(--home-narrow-width-bg-phone);
+      }
+
+      > .section-head {
+        @include tablet {
+          width: var(--home-narrow-width-bg-phone);
+        }
+      }
 
       .template-card-view-wrapper {
         width: 100%;
         overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0.5rem; // To make bottom shadow visible.
+        @include bg-phone {
+          overflow-x: visible; // To shadow visible on mobile.
+        }
 
         > .template-card-view {
           margin-top: 2rem;

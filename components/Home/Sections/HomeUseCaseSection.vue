@@ -14,7 +14,7 @@
 
             //- Completion Confetti
             home-confetti
-            
+
             //- Steps
             .step
               home-app-card(image='placeholder.png', :name='options[index].steps[0].appName', border-color-var='--color-home-sky-blue-1', box-shadow-var='--shadow-home-sky-blue')
@@ -52,6 +52,12 @@
                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 | incididunt ut labore et dolore magna aliqua.
 
+          //- Slider Dots
+          .mobile-slider-dots
+            .circle
+            .circle
+            .circle
+            .circle
 </template>
 
 <script>
@@ -95,21 +101,47 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "~/assets/styles/styles.scss";
+
   section {
     padding-bottom: 2.5rem;
 
     > .main {
+      @include tablet {
+        width: var(--home-narrow-width-bg-phone);
+      }
+      @include bg-phone {
+        margin-top: 3rem;
+      }
+
       > .section-body {
         margin-top: 2rem;
         display: grid;
-        grid-template-columns: repeat(3, max-content);
+        grid-template-columns: repeat(3, auto);
         grid-template-areas: "flow visual options";
+        @include tablet {
+          width: 100%;
+          justify-items: center;
+          grid-template-columns: auto;
+          grid-template-rows: repeat(3, auto);
+          grid-template-areas:
+            "flow"
+            "visual"
+            "options";
+        }
 
         > .flow {
           position: relative;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @include tablet {
+            width: 100%;
+            flex-direction: row;
+          }
+          @include bg-phone-2 {
+            justify-content: space-between;
+          }
 
           > .link {
             position: absolute;
@@ -121,6 +153,12 @@
             width: 100%;
             justify-content: space-between;
             margin-left: calc(var(--home-use-case-section-app-card-width) * 0.5);
+            @include tablet {
+              flex-direction: row;
+              width: 80%;
+              margin: 0 10%;
+              margin-top: calc(var(--home-use-case-section-app-card-height) * 0.5);
+            }
 
             > .circle {
               width: 5px;
@@ -138,12 +176,29 @@
             display: flex;
             align-items: flex-end;
             z-index: 2;
-            // Couldn't style svg from here.
+            @include tablet {
+              align-items: flex-start;
+              justify-content: flex-end;
+              margin-left: -5.5rem;
+              margin-top: 4rem;
+            }
+            @include bg-phone-2 {
+              margin: 0;
+              margin-left: calc(var(--home-use-case-section-app-card-width) * -1 + 1.1rem);
+              margin-top: calc(var(--home-use-case-section-app-card-height) - 1.1rem);
+            }
           }
 
           > .step {
             display: flex;
             z-index: 2;
+            @include tablet {
+              flex-direction: column;
+              align-items: center;
+            }
+            @include bg-phone-2 {
+              justify-content: space-between;
+            }
 
             > .detail {
               margin-left: 1rem;
@@ -151,13 +206,23 @@
               line-height: 1.5em;
               width: 12rem;
               color: var(--color-text-dark-1);
+              @include tablet {
+                font-size: 0.7em;
+                max-width: 10rem;
+                text-align: center;
+                margin: 0;
+                margin-top: 1rem;
+                width: 9rem;
+              }
+              @include bg-phone-2 {
+                display: none;
+              }
             }
           }
         }
 
         > .visual {
           margin-left: 1rem;
-          height: 28rem;
           background-color: var(--color-primary-1);
           font-family: var(--font-brand);
           display: flex;
@@ -165,12 +230,23 @@
           align-items: center;
           font-size: 1.1em;
           text-align: center;
+          height: 28rem;
           width: 22rem;
           padding: 0 1rem;
           box-sizing: border-box;
           border-radius: 3px;
           color: var(--color-text-dark-2);
           border-radius: 5px;
+          @include tablet {
+            margin: 0;
+            margin-top: 3rem;
+            height: 22rem;
+            width: 34rem;
+          }
+          @include bg-phone {
+            height: 50vw;
+            width: 100%;
+          }
         }
 
         > .options {
@@ -178,6 +254,10 @@
           flex-direction: column;
           justify-content: space-between;
           margin-left: 2rem;
+          @include tablet {
+            margin: 0;
+            margin-top: 2rem;
+          }
 
           > li {
             --element-width: 18rem;
@@ -200,6 +280,9 @@
               display: flex;
               justify-content: center;
               align-items: center;
+              @include tablet {
+                display: none;
+              }
 
               &:hover {
                 font-weight: bold;
@@ -220,12 +303,42 @@
               line-height: 1.2rem;
               z-index: 1;
               color: var(--color-text);
+              @include tablet {
+                font-size: 1em;
+                padding: 0;
+                background-color: var(--color-text);
+                height: auto;
+                width: auto;
+                max-width: 20rem;
+                color: var(--color-text-dark-4);
+                text-align: center;
+              }
+              @include md-phone {
+                font-size: 0.8em;
+              }
             }
 
             &:last-child > button {
               font-weight: bold;
               color: var(--color-text-dark-4);
               box-shadow: var(--shadow-home-dark);
+            }
+          }
+        }
+
+        > .mobile-slider-dots {
+          @include tablet {
+            display: flex;
+            justify-content: space-between;
+            width: 5rem;
+            margin-top: 3rem;
+
+            > .circle {
+              width: 7px;
+              height: 7px;
+              background-color: var(--color-card-bg-1);
+              border-radius: 50%;
+              box-sizing: border-box;
             }
           }
         }
