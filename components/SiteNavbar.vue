@@ -4,10 +4,10 @@
     .main
       .container
         //- Mobile Menu
-        svg.icon-menu(viewBox="0 0 33 22" xmlns="http://www.w3.org/2000/svg" @click="showMobileMenu")
-          rect(x="0.383057" y="18.8734" width="31.9204" height="2.79999")
-          rect(x="0.303467" y="9.80371" width="31.9996" height="2.73912")
-          rect(x="0.383057" y="0.67334" width="31.9204" height="2.79999")
+        svg.icon-menu(viewBox="0 0 33 22" @click="showMobileMenu")
+          rect#rect-1(x="0.383057" y="18.8734" width="31.9204" height="2.79999" rx="1.4")
+          rect#rect-2(x="0.303467" y="9.80371" width="31.9996" height="2.73912" rx="1.4")
+          rect#rect-3(x="0.383057" y="0.67334" width="31.9204" height="2.79999" rx="1.4")
 
         //- Left Wrapper
         .left-wrapper

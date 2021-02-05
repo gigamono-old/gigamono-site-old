@@ -2,6 +2,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
 
+  // Custom cache policy and other static stuff here. https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-render#statichttps://nuxtjs.org/docs/2.x/configuration-glossary/configuration-render#static
+  render: {
+    static: {},
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Sageflow | Workflow Automation",
