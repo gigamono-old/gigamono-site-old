@@ -3,7 +3,7 @@
     //-  Main
     .main
       //-  Bold Message
-      .bold-message Connect your apps, automate workflows, save time.
+      .bold-message Connect your business apps, automate the boring stuff and save time.
 
       //-  Small Message
       .small-message
