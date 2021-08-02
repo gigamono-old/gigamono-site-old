@@ -7,7 +7,7 @@
       //- Content
       .content
         //- Visual Image
-        .visual Commandline screenshot of installing Sageflow
+        .visual Commandline screenshot of installing Gigamono
 
         //- Check List
         ul.checklist

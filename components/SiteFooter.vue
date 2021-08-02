@@ -3,8 +3,8 @@
     .main.home-section-main
       //- Footer Header
       .header
-        img(src='~/assets/images/avatar-brand.png' alt='Sageflow logo')
-        .brand Sageflow
+        img(src='~/assets/images/avatar-brand.png' alt='Gigamono logo')
+        .brand Gigamono
         .links
           a(href='') About
           a(href='') Blog
@@ -26,7 +26,7 @@
     .bottom
       .main.home-section-main
         .wrapper
-          .copyright &copy; 2021 Sageflow, Ltd.
+          .copyright &copy; 2021 Gigamono, Ltd.
           .links
             a(href='#') Terms
             a(href='#') Privacy

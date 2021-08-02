@@ -7,7 +7,7 @@
 
       //-  Small Message
       .small-message
-        span.highlight Sageflow
+        span.highlight Gigamono
         |
         | makes it easy to automate your manual repetitive
         | tasks by connecting different apps in useful ways.

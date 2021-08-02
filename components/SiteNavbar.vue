@@ -11,8 +11,8 @@
 
         //- Left Wrapper
         .left-wrapper
-          img(src='~/assets/images/avatar-brand.png', alt='Sageflow logo')
-          .brand Sageflow
+          img(src='~/assets/images/avatar-brand.png', alt='Gigamono logo')
+          .brand Gigamono
           .v-divider
           .tagline Less work. More flow.
 

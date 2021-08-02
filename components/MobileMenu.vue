@@ -8,8 +8,8 @@
       .spacer
 
       .brand
-        img(src='~/assets/images/avatar-brand.png', alt='Sageflow logo')
-        .text Sageflow
+        img(src='~/assets/images/avatar-brand.png', alt='Gigamono logo')
+        .text Gigamono
 
       .spacer
 
